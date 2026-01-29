@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section className="py-20 px-4 md:px-10 grid md:grid-cols-2 gap-10">
       <div>
-        <h2 className="font-display text-5xl md:text-9xl text-white uppercase mb-6 md:mb-8 leading-tight">
+        <h2 className="font-display text-5xl md:text-8xl text-white uppercase mb-6 md:mb-8 leading-tight">
           Always <span className="text-accent">Building</span>,<br />
           Always{' '}
           <span

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #c6f46d; 
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f4f4f5;
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+
+.text-fill-anim {
+  background: linear-gradient(to top, var(--accent) 50%, #333 50%);
+  background-size: 100% 200%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+}
+
+.group:hover .text-fill-anim {
+  background-position: 0% 100%;
+}

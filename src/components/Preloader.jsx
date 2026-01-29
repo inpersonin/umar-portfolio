@@ -9,7 +9,7 @@ const Preloader = ({ setLoading }) => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(() => setLoading(false), 500); 
+          setTimeout(() => setLoading(false), 500);
           return 100;
         }
         return prev + 1;
@@ -24,22 +24,20 @@ const Preloader = ({ setLoading }) => {
       exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
     >
       <div className="relative">
-        <span 
+        <span
           className="font-display text-[50vw] md:text-[35vw] leading-none select-none"
           style={{ color: '#1f1f1f' }}
         >
           ☢&#xfe0e;
         </span>
 
-        <div 
+        <div
           className="absolute inset-0 flex items-center justify-center"
-          style={{ 
-            clipPath: `inset(${100 - progress}% 0px 0px 0px)`
+          style={{
+            clipPath: `inset(${100 - progress}% 0px 0px 0px)`,
           }}
         >
-          <span 
-            className="font-display text-[50vw] md:text-[35vw] leading-none select-none text-accent"
-          >
+          <span className="font-display text-[50vw] md:text-[35vw] leading-none select-none text-accent">
             ☢&#xfe0e;
           </span>
         </div>

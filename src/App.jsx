@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ReactLenis } from 'lenis/react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import About from './components/About';
@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const neonColors = [
-    '#c6f46d', 
+    '#c6f46d',
     '#4deeea',
     '#ff9f43',
     '#f30b0b',
@@ -19,7 +19,7 @@ function App() {
     '#00d2d3',
     '#ff6b6b',
     '#feca57',
-    '#2617fc'
+    '#2617fc',
   ];
 
   useEffect(() => {
@@ -28,16 +28,24 @@ function App() {
   }, []);
 
   return (
-    <ReactLenis root>
-      <div className="font-body bg-dark min-h-screen selection:bg-accent selection:text-black">
-        <AnimatePresence mode='wait'>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.075, // heavier, viscous scroll feel
+        smoothWheel: true,
+        wheelMultiplier: 1.25,
+        smoothTouch: false,
+      }}
+    >
+      <div className="min-h-screen bg-dark font-body selection:bg-accent selection:text-black">
+        <AnimatePresence mode="wait">
           {loading ? (
             <Preloader key="loader" setLoading={setLoading} />
           ) : (
             <motion.main
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
             >
               <Hero />
               <Projects />
@@ -52,3 +60,4 @@ function App() {
 }
 
 export default App;
+
